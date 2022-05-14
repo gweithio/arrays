@@ -23,8 +23,6 @@ test_array_map :: proc(t: ^testing.T) {
 
 	testing.expect_value(t, result[0], 4)
 	testing.expect_value(t, result[1], 8)
-	testing.expect_value(t, result[0], 4)
-	testing.expect_value(t, result[1], 8)
 	testing.expect_value(t, result[2], 10)
 
 }
