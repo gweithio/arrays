@@ -49,3 +49,22 @@ array_foreach :: proc($T: typeid/[]$E, arr: []E, f: proc(a: E)) {
 array_is_empty :: proc($T: typeid/[]$E, arr: []E) -> bool {
 	return (len(arr) <= 0)
 }
+
+array_merge :: proc(
+	$T: typeid/[dynamic]$E,
+	arr: [dynamic]E,
+	arr2: [dynamic]E,
+) -> [dynamic]E {
+	NewArr := [dynamic]E{}
+
+	for item in arr {
+		append_elem(&NewArr, item)
+	}
+
+	for item in arr2 {
+		append_elem(&NewArr, item)
+	}
+
+
+	return NewArr
+}

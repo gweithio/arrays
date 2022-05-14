@@ -46,3 +46,18 @@ test_array_is_empty :: proc(t: ^testing.T) {
 	testing.expect_value(t, arrays.array_is_empty([]u32, data), false)
 	testing.expect_value(t, arrays.array_is_empty([]u32, data2), true)
 }
+
+@(test)
+test_array_merge :: proc(t: ^testing.T) {
+	data := [dynamic]u32{1, 2}
+	data2 := [dynamic]u32{3, 4}
+
+	result := arrays.array_merge([dynamic]u32, data, data2)
+
+
+	testing.expect_value(t, result[0], 1)
+	testing.expect_value(t, result[1], 2)
+	testing.expect_value(t, result[2], 3)
+	testing.expect_value(t, result[3], 4)
+
+}

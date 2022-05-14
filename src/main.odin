@@ -12,6 +12,13 @@ main :: proc() {
 	fmt.println(arrays.array_is_empty([]u32, data))
 	fmt.println(arrays.array_is_empty([]u32, data2))
 
+
+	data3 := [dynamic]u32{1, 2, 3, 4}
+	data4 := [dynamic]u32{5, 6, 7, 8, 9, 10}
+
+	fmt.println(arrays.array_merge([dynamic]u32, data3, data4))
+
+
 	fmt.println(
 		arrays.array_filter([dynamic]u32, [dynamic]u32{2, 4, 5}, proc(x: u32) -> bool {
 				return x % 2 == 0
