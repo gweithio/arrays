@@ -39,3 +39,12 @@ test_array_filter :: proc(t: ^testing.T) {
 
 	testing.expect_value(t, len(result), 2)
 }
+
+@(test)
+test_array_is_empty :: proc(t: ^testing.T) {
+	data := []u32{1, 2, 3, 4, 5}
+	data2 := []u32{}
+
+	testing.expect_value(t, arrays.array_is_empty([]u32, data), false)
+	testing.expect_value(t, arrays.array_is_empty([]u32, data2), true)
+}

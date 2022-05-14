@@ -44,3 +44,7 @@ array_foreach :: proc($T: typeid/[]$E, arr: []E, f: proc(a: E)) {
 		f(arr[i])
 	}
 }
+
+array_is_empty :: proc($T: typeid/[]$E, arr: []E) -> bool {
+	return (len(arr) <= 0)
+}

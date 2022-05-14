@@ -6,9 +6,17 @@ import "shared:arrays"
 
 main :: proc() {
 
-	fmt.println(arrays.array_filter([dynamic]u32, [dynamic]u32{2, 4, 5}, proc(x: u32) -> bool {
+	data := []u32{1, 2, 3, 45}
+	data2 := []u32{}
+
+	fmt.println(arrays.array_is_empty([]u32, data))
+	fmt.println(arrays.array_is_empty([]u32, data2))
+
+	fmt.println(
+		arrays.array_filter([dynamic]u32, [dynamic]u32{2, 4, 5}, proc(x: u32) -> bool {
 				return x % 2 == 0
-			}))
+			}),
+	)
 
 	fmt.println(arrays.array_map([]u32, []u32{2, 4, 5}, proc(x: u32) -> u32 {
 				return x * 2
