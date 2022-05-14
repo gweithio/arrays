@@ -54,7 +54,6 @@ test_array_merge :: proc(t: ^testing.T) {
 
 	result := arrays.array_merge([dynamic]u32, data, data2)
 
-
 	testing.expect_value(t, result[0], 1)
 	testing.expect_value(t, result[1], 2)
 	testing.expect_value(t, result[2], 3)

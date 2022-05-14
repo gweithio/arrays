@@ -50,6 +50,7 @@ array_is_empty :: proc($T: typeid/[]$E, arr: []E) -> bool {
 	return (len(arr) <= 0)
 }
 
+// merge 2 arrays of the same type
 array_merge :: proc(
 	$T: typeid/[dynamic]$E,
 	arr: [dynamic]E,
